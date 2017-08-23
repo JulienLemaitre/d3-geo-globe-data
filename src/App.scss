@@ -39,7 +39,33 @@ html, body {
   background-color: #fff;
 }
 
-//svg path {
-//  fill: none;
-//  stroke: black;
-//}
+.stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+.fill {
+  fill: #000;
+}
+
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-width: .5px;
+  stroke-opacity: .5;
+}
+
+.land {
+  fill: #333;
+}
+
+.boundary {
+  fill: none;
+  stroke: #666;
+  stroke-width: .5px;
+}
+.point {
+  fill: steelblue;
+  opacity: 0.5;
+}

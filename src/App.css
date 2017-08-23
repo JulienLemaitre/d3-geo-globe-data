@@ -41,7 +41,7 @@ html, body {
   stroke-width: 3px; }
 
 .fill {
-  fill: #000; }
+  fill: #172334; }
 
 .graticule {
   fill: none;
@@ -50,7 +50,7 @@ html, body {
   stroke-opacity: .5; }
 
 .land {
-  fill: #333; }
+  fill: #363e28; }
 
 .boundary {
   fill: none;

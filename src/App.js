@@ -25,7 +25,7 @@ class App extends Component {
       const data = _.orderBy(result.features, [d => d.properties.mass, 'desc']);
       // console.log("result:",result,"data:", data);
       this.setState({ data });
-    })
+    });
   }
 
   onImpactOver(d) {

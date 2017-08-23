@@ -42,7 +42,7 @@ class GeoData extends Component {
       .style('height', height);
 
     function update() {
-      angle = (angle - 0.5) % 360;
+      angle = (angle - 0.25) % 360;
       projection.rotate([angle,-20,0]);
 
       svg.selectAll("defs").remove();

@@ -32,17 +32,23 @@ html, body {
   background-color: #ddd;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .chart {
-  background-color: #fff;
+  background-color: #222;
+  flex: 1;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
 }
 
 .stroke {
   fill: none;
-  stroke: #000;
-  stroke-width: 3px;
+  stroke: steelblue;
+  stroke-width: px;
 }
 
 .fill {
@@ -58,9 +64,9 @@ html, body {
 
 .land {
   fill: #171b23;
-  stroke: darkblue;
+  stroke: steelblue;
   stroke-width: 0.5px;
-  //stroke-opacity: .5;
+  stroke-opacity: .8;
 }
 
 .boundary {
@@ -71,4 +77,47 @@ html, body {
 .point {
   fill: steelblue;
   opacity: 0.5;
+  transition: fill 0.25s;
+
+  &.active {
+    fill: red;
+  }
+  &.visited {
+    fill: purple;
+  }
+}
+#tooltip {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(23,27,35, 0.65);
+  color: white;
+  border: 1px solid steelblue;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  opacity: 0;
+  text-align: left;
+  transition: opacity 0.25s;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+  }
+  .mass::before {
+    content: "Mass (g):";
+    margin-right: 0.5em;
+  }
+  .year::before {
+    content: "Year:";
+    margin-right: 0.5em;
+  }
+  .name::before {
+    content: "Name:";
+    margin-right: 0.5em;
+  }
+  .recclass::before  {
+    content: "Class:";
+    margin-right: 0.5em;
+  }
 }

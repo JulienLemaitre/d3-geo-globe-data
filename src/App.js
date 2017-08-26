@@ -11,6 +11,7 @@ class App extends Component {
 
     this.state = {
       data: null,
+      land: null,
       tooltipData: null
     };
 
@@ -26,6 +27,18 @@ class App extends Component {
       // console.log("result:",result,"data:", data);
       this.setState({ data });
     });
+    d3.json("ne_110m_land3.json", (error, land) => {
+      if (error) throw error;
+
+      this.setState({ land });
+
+      // world-map.json
+      // land = topojson.feature(worldData, worldData.objects.land);
+      // countries = topojson.mesh(worldData, worldData.objects.countries, function (a, b) {
+      //   return a !== b;
+      // });
+
+    });
   }
 
   onImpactOver(d) {
@@ -36,8 +49,9 @@ class App extends Component {
   }
 
   onImpactOut() {
+    console.log("mouseout");
     this.timer = setTimeout( () => {
-      console.log("mouseout");
+      console.log("mouseout timer");
     }, 1000 );
 
   }
@@ -51,6 +65,7 @@ class App extends Component {
         <div className="App-body">
           <GeoData
             data = {this.state.data}
+            land = {this.state.land}
             onImpactOver = {this.onImpactOver}
             onImpactOut = {this.onImpactOut}
           />

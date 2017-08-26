@@ -50,7 +50,9 @@ html, body {
   stroke-opacity: .5; }
 
 .land {
-  fill: #363e28; }
+  fill: #171b23;
+  stroke: darkblue;
+  stroke-width: 0.5px; }
 
 .boundary {
   fill: none;

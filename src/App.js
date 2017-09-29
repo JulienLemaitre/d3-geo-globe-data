@@ -19,7 +19,7 @@ class App extends Component {
     d3.json("geo-data.json", (error, result) => {
       if (error) throw error;
 
-      const data = _.orderBy(result.features, [d => d.properties.mass, 'desc']);
+      const data = _.orderBy(result.features, [d => +(d.properties.mass)], ['desc']);
       this.setState({ data });
     });
     d3.json("ne_110m_land3.json", (error, land) => {
